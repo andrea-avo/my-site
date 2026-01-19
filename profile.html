@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <style>
+      :root {
+        --bg-color: #e9effa;
+        --text-color: #0f151a;
+        --close-btn-color: #2c3e50;
+        --close-btn-hover-color: #e74c3c;
+        --bubble-bg-received: #ffffff;
+        --bubble-bg-sent: #d9fdd3;
+        --bubble-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        --input-bar-bg: #202c33;
+        --input-text-color: #8696a0;
+        --icon-color: #8696a0;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Clear Sans", sans-serif;
+        background: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.5;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+      }
+
+      header {
+        width: 100%;
+        border-bottom: 1px solid rgba(44, 62, 80, 0.2);
+        padding: 20px 0;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        position: relative;
+        z-index: 10;
+      }
+
+      .header-container {
+        width: 100%;
+        padding: 0 40px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+      }
+
+      .page-title {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--text-color);
+        text-align: center;
+        pointer-events: none;
+      }
+
+      .close-btn {
+        font-size: 2rem;
+        font-weight: 400;
+        text-decoration: none;
+        color: var(--close-btn-color);
+        transition: transform 0.3s ease;
+        line-height: 1;
+        padding: 5px;
+      }
+
+      .close-btn:hover {
+        transform: scale(1.1);
+        color: var(--close-btn-hover-color);
+      }
+
+      main {
+        flex: 1;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+      }
+
+      .content-text {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .message {
+        padding: 8px 12px;
+        border-radius: 12px;
+        box-shadow: var(--bubble-shadow);
+        font-size: 1rem;
+        color: #111b21;
+        max-width: 75%;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        gap: 8px;
+        word-wrap: break-word;
+      }
+
+      .received {
+        background-color: var(--bubble-bg-received);
+        align-self: flex-start;
+        border-top-left-radius: 0;
+      }
+
+      .sent {
+        background-color: var(--bubble-bg-sent);
+        align-self: flex-end;
+        border-top-right-radius: 0;
+      }
+
+      .chat-date {
+        font-size: 0.65rem;
+        color: #667781;
+        margin-left: auto;
+        padding-top: 4px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      footer {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: transparent;
+        padding: 10px 15px 20px 15px;
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+      }
+
+      .input-capsule {
+        width: 100%;
+        max-width: 900px;
+        background-color: var(--input-bar-bg);
+        border-radius: 30px;
+        padding: 10px 15px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .footer-copyright {
+        flex: 1;
+        color: var(--input-text-color);
+        font-size: 1rem;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        fill: var(--icon-color);
+        cursor: pointer;
+        flex-shrink: 0;
+      }
+
+      .icon-mic {
+        background: #00a884;
+        fill: white;
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 5px;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          overflow-y: auto;
+        }
+        .header-container {
+          padding: 0 20px;
+        }
+        main {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .message {
+          max-width: 85%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h2 class="page-title">Profile</h2>
+        <a href="index.html" class="close-btn" title="Close">&#10005;</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-text">
+        <div class="message received">
+          Hello there!👋
+          <span class="chat-date">19 Jan 2026</span>
+        </div>
+
+        <div class="message received">
+          I'm Andrea Virgil Ofian, a Fullstack Developer
+          <span class="chat-date">19 Jan 2026</span>
+        </div>
+
+        <div class="message received">
+          I am currently open to new projects and collaborations.🤝
+          <span class="chat-date">19 Jan 2026</span>
+        </div>
+
+        <div class="message received">
+          Let’s connect and build something amazing together!🚀
+          <span class="chat-date">19 Jan 2026</span>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="input-capsule">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+        </svg>
+
+        <svg class="icon" viewBox="0 0 24 24">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
+          ></path>
+        </svg>
+
+        <div class="footer-copyright">© 2026 ANDREA WEB</div>
+
+        <svg class="icon" style="margin-left: auto" viewBox="0 0 24 24">
+          <path
+            d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"
+          ></path>
+          <path
+            d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"
+          ></path>
+        </svg>
+      </div>
+    </footer>
+  </body>
+</html>
