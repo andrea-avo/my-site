@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interface Overview - Final Polish</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.cdnfonts.com/css/clear-sans" rel="stylesheet" />
+    <link rel="stylesheet" href="css/info.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">System Overview</div>
+      <a href="index.html" class="close-link">✕</a>
+    </header>
+
+    <div class="scroll-line"><div class="scroll-fill" id="progress"></div></div>
+
+    <div class="bg-container">
+      <img src="interface/pagi.png" id="img-pagi" class="active" />
+      <img src="interface/siang.png" id="img-siang" />
+      <img src="interface/sore.png" id="img-sore" />
+      <img src="interface/malam.png" id="img-malam" />
+    </div>
+
+    <main>
+      <section data-time="pagi">
+        <div class="text-content">
+          <h2>Atmosphere</h2>
+          <h1>Generative Dawn.</h1>
+          <p>
+            This interface lives in real-time, detecting dawn to align the
+            visual atmosphere. Each sky element is uniquely generated.
+          </p>
+        </div>
+      </section>
+
+      <section data-time="siang">
+        <div class="text-content">
+          <h2>Dynamic World</h2>
+          <h1>Organic Ecosystem.</h1>
+          <p>
+            The visual ecosystem within is dynamically moving. Birds and clouds
+            soar at random altitudes, while the sun feels refreshing.
+          </p>
+        </div>
+      </section>
+
+      <section data-time="sore">
+        <div class="text-content">
+          <h2>Transition</h2>
+          <h1>Golden Transition.</h1>
+          <p>
+            The system intelligently changes the color palette following the
+            transition of the sun, evolving with the rhythm of time.
+          </p>
+        </div>
+      </section>
+
+      <section data-time="malam">
+        <div class="text-content">
+          <h2>Celestial</h2>
+          <h1>Lunar Astronomy.</h1>
+          <p>
+            The darkness of night brings a random star map. Uses the SunCalc
+            library to display accurate moon phases.
+          </p>
+        </div>
+        <footer>© <span id="year"></span> ANDREA WEB</footer>
+      </section>
+    </main>
+    <script src="js/info.js"></script>
+  </body>
+</html>

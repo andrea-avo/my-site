@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-color: #f0f7ff;
+  --text: #2c3e50;
+  --bubble: #ffffff;
+  --input-bg: #ffffff;
+  --icon-fill: #a0aec0;
+}
+
+body {
+  font-family: "Clear Sans", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  transition: all 1s ease;
+}
+
+.container {
+  width: 100%;
+  max-width: 450px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 35px 25px 15px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.header-placeholder {
+  width: 22px;
+}
+
+.title {
+  grid-column: 2;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.close-icon {
+  grid-column: 3;
+  justify-self: end;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 20px;
+  opacity: 0.4;
+  transition: transform 0.3s ease;
+}
+
+.close-icon:hover {
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+main {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.msg {
+  background: var(--bubble);
+  padding: 16px 20px;
+  /* Sudut kiri bawah dibuat tajam (0px) */
+  border-radius: 18px 18px 18px 0px;
+  font-size: 15px;
+  max-width: 88%;
+  line-height: 1.6;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  animation: msgAppear 0.7s ease backwards;
+  border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+@keyframes msgAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  } /* Muncul dari kiri */
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.time-stamp {
+  display: block;
+  font-size: 10px;
+  margin-top: 8px;
+  opacity: 0.3;
+  font-weight: 700;
+}
+
+footer {
+  padding: 20px 25px 40px;
+}
+
+.input-mimic {
+  background: var(--input-bg);
+  border-radius: 30px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.copy-text {
+  flex: 1;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text);
+  opacity: 0.4;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.icon-small {
+  width: 18px;
+  height: 18px;
+  fill: var(--icon-fill);
+}
